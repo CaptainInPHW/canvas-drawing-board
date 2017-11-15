@@ -1,23 +1,29 @@
 body{
 	margin: 0;
-	padding-top: 30px;
 	outline: 1px solid red;
+	overflow: hidden;
 }
 canvas{
 	position: relative;
-	margin: 30px 0 0 30px;
-	background: #ddd;
+	background: #eee;
 	outline: 1px solid red;
+	box-sizing: border-box;
 }
-body{
+canvas.pencil{
 	cursor: url("https://png.icons8.com/edit/win10/30/000000"), default;
 }
-span{
-	position: absolute;
+canvas.pen{
+	cursor: url("https://png.icons8.com/pen/win10/30/000000"), default;
+}
+canvas.eraser{
+	cursor: url("https://png.icons8.com/erase/win8/30/000000"), default;
+}
+aside{
+	position: fixed;
 	top: 0;
 	left: 0;
-	display: inline-block;;
+	width: 100%;
 	height: 30px;
+	z-index: 999;
 	outline: 1px solid red;
-	background: #000;
 }
