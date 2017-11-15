@@ -8,14 +8,15 @@ var last_position = {
 var begin = false;
 canvas.onmousedown = function(evt){
 	begin = !begin;
-	last_position.offsetX = evt.offsetX;
-	last_position.offsetY = evt.offsetY;
+	console.log(evt);
+	last_position.offsetX = evt.offsetX + 4; //+ 26
+	last_position.offsetY = evt.offsetY + 26; //+ 4;
 }
 canvas.onmousemove = function(evt){
 	if (begin) {
 		var new_position = {
-			offsetX: evt.offsetX,
-			offsetY: evt.offsetY
+			offsetX: evt.offsetX + 4,
+			offsetY: evt.offsetY + 26
 		}
 		ctx.beginPath();
 		ctx.moveTo(last_position.offsetX,last_position.offsetY);
