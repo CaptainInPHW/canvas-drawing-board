@@ -7,12 +7,18 @@
 </head>
 <body>
 	<aside>
-		<input type="color" class="color">
 		<button class="pencil">pencil</button>
 		<button class="pen">pen</button>
 		<button class="eraser">eraser</button>
+		<select>
+			<option value="0" selected disabled >请选择笔画粗细</option>
+			<option value="1">4</option>
+			<option value="2">5</option>
+			<option value="3">6</option>
+		</select>
+		<input type="color" class="color">
 	</aside>
-	<canvas width="500" height="500"></canvas>
+	<canvas></canvas>
 	<script src="./script.js"></script>
 </body>
 </html>
