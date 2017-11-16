@@ -68,10 +68,10 @@ window.onresize = function(){
 	var data_url = canvas.toDataURL();
 	setCanvasSize();
 	var image = new Image();
+ 	image.src = data_url;
 	image.onload = function(){
 		ctx.drawImage(image, 0 ,0);
 	}
- 	image.src = data_url;
 }
 
 
