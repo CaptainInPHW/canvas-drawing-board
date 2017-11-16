@@ -8,12 +8,16 @@ canvas{
 	background: #eee;
 	outline: 1px solid red;
 	box-sizing: border-box;
+	cursor: url("./pencil.png"), default;
 }
 canvas.pencil{
 	cursor: url("./pencil.png"), default;
 }
 canvas.pen{
 	cursor: url("./pen.png"), default;
+}
+canvas.brush{
+	cursor: url("./brush.png"), default;
 }
 canvas.eraser{
 	cursor: url("./eraser.png"), default;
@@ -25,9 +29,25 @@ aside{
 	width: 100%;
 	height: 30px;
 	z-index: 999;
-	outline: 1px solid red;
+}
+aside > *{
+	margin: 0 5px;
+	float: right;
+	height: 30px;
+	border: none;
+	outline: none;
+	display: block;
+	border-radius: 5px;
+}
+aside > *:hover{
+	cursor: pointer;
+}
+button{
+	width: 70px;
+}
+select{
+	width: 50px;
 }
 input{
-	display: inline-block;
-	box-sizing: content-box;
+	height: 30px;
 }
