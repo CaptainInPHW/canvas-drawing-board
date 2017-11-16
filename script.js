@@ -1,10 +1,10 @@
-alert("画板还在不断完善中......");
-alert("BUG：   1、画板工具栏下方 30px 处不能绘画（因为设置了鼠标 icon，大小为 30px ） 2、橡皮擦不能够连续擦除   3、大画板缩小后再放大，所画图案会丢失 overflow 部分");
 var body = document.querySelector("body");
 var canvas = document.querySelector("canvas");
 canvas.width = document.documentElement.clientWidth;
 canvas.height = document.documentElement.clientHeight;
 var ctx = canvas.getContext('2d');
+alert("画板还在不断完善中......");
+alert("BUG：   1、画板工具栏下方 30px 处不能绘画（因为设置了鼠标 icon，大小为 30px ） 2、橡皮擦不能够连续擦除   3、大画板缩小后再放大，所画图案会丢失 overflow 部分");
 var last_position = {
 	offsetX: undefined,
 	offsetY: undefined
