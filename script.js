@@ -113,6 +113,7 @@ function selectTool(){
 	var pen = document.querySelector(".pen");
 	var brush = document.querySelector(".brush");
 	var eraser = document.querySelector(".eraser");
+	var reset = document.querySelector(".reset");
 	pencil.onclick = function(){
 		canvas.className = "pencil";
 	};
@@ -125,6 +126,9 @@ function selectTool(){
 	eraser.onclick = function(){
 		canvas.className = "eraser";
 	};
+	reset.onclick = function(){
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+	}
 }
 preventCopyCode();
 function preventCopyCode(){
