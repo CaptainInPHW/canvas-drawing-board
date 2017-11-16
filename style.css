@@ -1,12 +1,10 @@
 body{
 	margin: 0;
-	outline: 1px solid red;
 	overflow: hidden;
 }
 canvas{
 	position: relative;
 	background: #eee;
-	outline: 1px solid red;
 	box-sizing: border-box;
 	cursor: url("./pencil.png"), default;
 }
