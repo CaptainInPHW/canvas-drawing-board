@@ -109,31 +109,85 @@ function changeCanvas(){
 selectTool();
 function selectTool(){
 	var canvas = document.querySelector("canvas");
+	var color = document.querySelector(".color");
 	var pencil = document.querySelector(".pencil");
 	var pen = document.querySelector(".pen");
 	var brush = document.querySelector(".brush");
 	var eraser = document.querySelector(".eraser");
 	var reset = document.querySelector(".reset");
+	var download = document.querySelector(".download");
 	pencil.onclick = function(){
-		canvas.className = "pencil";
+		changeCanvasClassName("pencil");
 	};
+	pencil.onmouseenter = function(evt){
+		hoverChangeBackground(pencil,"铅笔");
+	}
+	pencil.onmouseleave = function(){
+		unhoverChangeBackground(pencil,"pencil");
+	}
 	pen.onclick = function(){
-		canvas.className = "pen";
+		changeCanvasClassName("pen");
+	};
+	pen.onmouseenter = function(){
+		hoverChangeBackground(pen,"钢笔");
+	};
+	pen.onmouseleave = function(){
+		unhoverChangeBackground(pen,"pen");
 	};
 	brush.onclick = function(){
-		canvas.className = "brush";
+		changeCanvasClassName("brush");
+	};
+	brush.onmouseenter = function(){
+		hoverChangeBackground(brush,"毛笔");
+	};
+	brush.onmouseleave = function(){
+		unhoverChangeBackground(brush,"brush");
 	};
 	eraser.onclick = function(){
-		canvas.className = "eraser";
-	};
+		changeCanvasClassName("eraser");
+	}
+	eraser.onmouseenter = function(){
+		eraser.innerText = "橡皮擦";
+	}
+	eraser.onmouseleave = function(){
+		eraser.innerText = "eraser";
+	}
 	reset.onclick = function(){
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
+	}
+	reset.onmouseenter = function(){
+		reset.innerText = "清空画板";
+	}
+	reset.onmouseleave = function(){
+		reset.innerText = "reset";
+	}
+	download.onclick = function(){
+		download.href = canvas.toDataURL();
+	}
+	download.onmouseenter = function(){
+		download.innerText = "下载图片";
+	}
+	download.onmouseleave = function(){
+		download.innerText = "download";
+	}
+	function changeCanvasClassName(className){
+		canvas.className = className;
+	}
+	function hoverChangeBackground(target,chinese){
+		target.style.background = color.value;
+		target.style.color = "#fff";
+		target.innerText = chinese;
+	}
+	function unhoverChangeBackground(target,english){
+		target.style.background = "#DCDCDC";
+		target.style.color = "#000";
+		target.innerText = english;
 	}
 }
 preventCopyCode();
 function preventCopyCode(){
     window.oncontextmenu = function(evt){
-        alert("请尊重别人的劳动成果！");
+        alert("源码在我的仓库哦 → https://github.com/CaptainInPHW/homework-canvas");
         return false;
     }
 }
