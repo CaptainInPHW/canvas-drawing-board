@@ -3,15 +3,10 @@ var canvas = document.querySelector("canvas");
 canvas.width = document.documentElement.clientWidth;
 canvas.height = document.documentElement.clientHeight;
 var ctx = canvas.getContext('2d');
-alert("画板还在不断完善中......");
-alert("BUG：   1、画板工具栏下方 30px 处不能绘画（因为设置了鼠标 icon，大小为 30px ） 2、橡皮擦不能够连续擦除   3、大画板缩小后再放大，所画图案会丢失 overflow 部分");
 var last_position = {
 	offsetX: undefined,
 	offsetY: undefined
 }
-
-
-
 var draw_begin = false;
 var canvas_leave = false;
 canvas.onmouseenter = function(){
@@ -30,16 +25,9 @@ body.onmouseup = function(){
 body.onmouseleave = function(){
 	draw_begin = false;
 }
-
-
-
-
-
 canvas.onmousedown = function(evt){
 	if (evt.which == 1) {
 		draw_begin = true;
-		// last_position.offsetX = evt.offsetX;
-		// last_position.offsetY = evt.offsetY;
 		last_position.offsetX = evt.offsetX + 3;
 		last_position.offsetY = evt.offsetY + 27 ;
 	}
@@ -49,8 +37,6 @@ canvas.onmousemove = function(evt){
 		var canvas = document.querySelector("canvas");
 		var color = document.querySelector(".color");
 		var new_position = {
-			// offsetX: evt.offsetX,
-			// offsetY: evt.offsetY
 			offsetX: evt.offsetX + 3,
 			offsetY: evt.offsetY + 27
 		};
@@ -183,11 +169,4 @@ function selectTool(){
 		target.style.color = "#000";
 		target.innerText = english;
 	}
-}
-preventCopyCode();
-function preventCopyCode(){
-    window.oncontextmenu = function(evt){
-        alert("源码在我的仓库哦 → https://github.com/CaptainInPHW/homework-canvas");
-        return false;
-    }
 }
